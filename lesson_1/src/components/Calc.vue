@@ -1,10 +1,10 @@
 <template>
     <div class="main">
         <label for="op1">
-            <input id="op1" type="number" v-model.number="op1">
+            <input id="op1" type="number" placeholder="0" v-model.number="op1">
         </label>
         <label for="op2">
-            <input id="op2" type="number" v-model.number="op2">
+            <input id="op2" type="number" placeholder="0" v-model.number="op2">
         </label>
         = {{ result }}
 
