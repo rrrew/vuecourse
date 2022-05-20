@@ -1,10 +1,10 @@
 <template>
     <div class="main">
         <label for="op1">
-            <input id="op1" type="number" v-model.number="op1">
+            <input id="op1" type="number" placeholder="0" v-model.number="op1">
         </label>
         <label for="op2">
-            <input id="op2" type="number" v-model.number="op2">
+            <input id="op2" type="number" placeholder="0" v-model.number="op2">
         </label>
         = {{ result }}
 
@@ -14,8 +14,8 @@
         <button @click="sub">-</button>
         <button @click="div">/</button>
         <button @click="mult">*</button>
-        <!-- <button @click="power">Power</button>
-        <button @click="integerDiv">Integer division</button> -->
+        <button @click="power">Power</button>
+        <button @click="integerDiv">Integer division</button>
     </div>
 </template>
 
@@ -39,12 +39,12 @@ export default {
         mult (){
             this.result = this.op1 * this.op2
         },
-        // power () {
-        //     this.result = this.op1 ** this.op2
-        // },
-        // integerDiv () {
-        //     this.result = parseInt(this.op1/this.op2)
-        // }
+        power () {
+            this.result = this.op1 ** this.op2
+        },
+        integerDiv () {
+            this.result = parseInt(this.op1/this.op2)
+        }
     }
 };
 </script>
