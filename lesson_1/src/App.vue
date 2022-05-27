@@ -15,6 +15,17 @@
     </label>
     <p>{{ someText }}</p>
     <CalcComponent />
+    <!-- <div>
+      {{ collection }}
+    </div>
+    <div v-for="(item, index) in collection" :key="index">
+      {{ index }}: {{ item }}
+    </div>
+    <button @click="addElementInCollection">Add</button>
+    <button @click="removeElementFromElement">Remove</button> -->
+    <!-- <div v-for="item of filteredArr" :key="item.text">
+      {{ item }}
+    </div> -->
 </template>
 
 <script>
@@ -27,7 +38,22 @@ export default {
     return {
       msg: 'Hello Vue!',
       counter: 0,
-      someText: ''
+      someText: '',
+      collection: [1,2,3,4,5,6,7],
+      arr: [
+        {
+          text: 'qwe',
+          show: true
+        },
+        {
+          text: 'asd',
+          show: true
+        },
+        {
+          text: 'zxc',
+          show: false
+        },
+      ]
     };
   },
   methods: {
@@ -43,7 +69,19 @@ export default {
     },
     blur () {
       console.log('blur');
+    },
+    addElementInCollection () {
+      const nextElementValue = this.collection [this.collection.length - 1] + 1;
+      this.collection.push(nextElementValue);
+    },
+    removeElementFromElement () {
+      this.collection.pop();
     }
+  },
+  computed: {
+    filteredArr() {
+      return this.arr.filter(({ show }) => show);
+    },
   },
   components: {
     HelloWorld,
