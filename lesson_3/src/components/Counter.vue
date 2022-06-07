@@ -13,7 +13,38 @@ export default {
     methods: {
         increase (){
             this.counter += 1;
+        },
+        mouseOver() {
+          console.log ('mouseOver');
         }
+    },
+    beforeCreate() {
+      console.log ('beforeCreate');
+    },
+    created() {
+      console.log('created');
+    },
+    beforeMount() {
+      console.log('beforeMount');
+    },
+    mounted() {
+      console.log('mounted');
+      const div = document.querySelector('#hover');
+      div.addEventListener('mouseover', this.mouseOver);
+    },
+    beforeUpdate() {
+      console.log ('beforeUpdate');
+    },
+    updated() {
+      console.log ('updated');
+    },
+    beforeDestroy() {
+      console.log('beforeDestroy');
+      const div = document.querySelector('#hover');
+      div.removeEventListener('mouseover', this.mouseOver);
+    },
+    destroyed() {
+      console.log('destroyed');
     },
 }
 </script>
