@@ -1,10 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  <!-- <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App" :show="true"/>
-  <p>{{ msg }}</p>
+  <p>{{ msg }}</p> -->
   <!-- <button @click="inc(2, $event)">{{ counter }}</button>
   <button @click="reset">Reset counter</button> -->
-  <label for="someText">
+  <!-- <label for="someText">
   <input 
     id="someText"
     type="text"
@@ -14,7 +14,7 @@
     @blur="blur">
     </label>
     <p>{{ someText }}</p>
-    <CalcComponent />
+    <CalcComponent /> -->
     <!-- <div>
       {{ collection }}
     </div>
@@ -26,11 +26,18 @@
     <!-- <div v-for="item of filteredArr" :key="item.text">
       {{ item }}
     </div> -->
+    <div id="app">
+      <Counter></Counter>
+      <calc></calc>
+      </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import CalcComponent from './components/Calc.vue';
+import Calc from './components/Calc.vue';
+// import HelloWorld from './components/HelloWorld.vue';
+// import CalcComponent from './components/Calc.vue';
+// import CounterComp from './components/Counter.vue';
+import Counter from './components/Counter.vue';
 
 export default {
   name: 'App',
@@ -84,9 +91,11 @@ export default {
     },
   },
   components: {
-    HelloWorld,
-    CalcComponent,
-  }
+    // HelloWorld,
+    // CalcComponent,
+    Counter,
+    Calc,
+}
 }
 </script>
 
