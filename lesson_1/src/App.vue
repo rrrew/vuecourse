@@ -28,10 +28,12 @@
     </div> -->
     <div id="app">
       <Counter></Counter>
-    </div>
+      <calc></calc>
+      </div>
 </template>
 
 <script>
+import Calc from './components/Calc.vue';
 // import HelloWorld from './components/HelloWorld.vue';
 // import CalcComponent from './components/Calc.vue';
 // import CounterComp from './components/Counter.vue';
@@ -92,6 +94,7 @@ export default {
     // HelloWorld,
     // CalcComponent,
     Counter,
+    Calc,
 }
 }
 </script>
